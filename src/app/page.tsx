@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <Box mih={"100vh"} miw={"100vw"} className="bg-gray-100 dark:bg-mtn-dark-8">
       <Container size="xs">
-        <Stack py={"xl"}>
+        <Stack py={"xl"} justify="space-between">
           <Group justify={"space-between"} align="center">
             <Stack gap="xs">
               <div className="flex items-center space-x-2">
@@ -126,7 +126,14 @@ export default function Home() {
               </ul>
             </article>
           </div>
+          <Box className="place-self-end">
+          <Text size={"xs"} variant="text">
+            © {new Date().getFullYear()} codellyson
+          </Text>
+        </Box>
         </Stack>
+
+      
       </Container>
     </Box>
   );

@@ -1,6 +1,7 @@
 import { Config } from "tailwindcss";
 
 const mantineTailwind: Config = {
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   darkMode: ["class", '[data-mantine-color-scheme="dark"]'],
   theme: {
     extend: {
