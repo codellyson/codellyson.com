@@ -2,6 +2,7 @@
 import "./globals.css"
  
 import { MantineProvider, ColorSchemeScript } from "@mantine/core"
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata = {
 	title: "codellyson",
@@ -22,6 +23,7 @@ export default function RootLayout({
 				<MantineProvider theme={{
 					primaryColor:'violet',
 				}}>{children}</MantineProvider>
+				 <Analytics />
 			</body>
 		</html>
 	)

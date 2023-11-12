@@ -9,11 +9,14 @@ import {
   Text,
   
   Anchor,
+  ActionIcon,
 } from "@mantine/core";
  
 import { useState } from "react";
  
 import { ColorSchemeToggle } from "./_components/themeToggle";
+import { IconBrandGithub, IconBrandX, IconX } from "@tabler/icons-react";
+import { Router } from "next/router";
 
 
 
@@ -51,7 +54,12 @@ export default function Home() {
               </Text>
             </Stack>
 
+            <Group gap='xs'>
+            <ActionIcon variant={"transparent"} onClick={()=> window.open('https://github.com/codellyson', '_blank')}><IconBrandGithub   size={18}/></ActionIcon>
+            <ActionIcon variant={"transparent"} onClick={()=> window.open('https://x.com/codellyson', '_blank')}><IconBrandX   size={18}/></ActionIcon>
             <ColorSchemeToggle />
+
+            </Group>
           </Group>
           <div className="container flex flex-col space-y-2">
             <article className="pt-6">
