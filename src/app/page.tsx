@@ -14,7 +14,7 @@ import {
  
 
 import { ColorSchemeToggle } from "./_components/themeToggle";
-import { IconBrandGithub, IconBrandX, IconWebhook, IconX } from "@tabler/icons-react";
+import { IconBrandGithub, IconBrandX, IconLink, IconWebhook, IconX } from "@tabler/icons-react";
  
 export default function Home() {
   
@@ -68,7 +68,7 @@ export default function Home() {
                   window.open("https://blog.codellyson.com", "_blank")
                 }
               >
-                <IconWebhook size={18} />
+                <IconLink size={18} />
               </ActionIcon>
               <ColorSchemeToggle />
             </Group>

@@ -1,5 +1,5 @@
- 
-import "./globals.css"
+import "@mantine/core/styles.css";
+
  
 import { MantineProvider, ColorSchemeScript } from "@mantine/core"
 import { Analytics } from '@vercel/analytics/react';
