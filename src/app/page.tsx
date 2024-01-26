@@ -3,36 +3,29 @@
 import {
   Box,
   Container,
- 
   Group,
   Stack,
   Text,
-  
   Anchor,
   ActionIcon,
+  List,
 } from "@mantine/core";
+
  
-import { useState } from "react";
- 
+
 import { ColorSchemeToggle } from "./_components/themeToggle";
-import { IconBrandGithub, IconBrandX, IconX } from "@tabler/icons-react";
-import { Router } from "next/router";
-
-
-
+import { IconBrandGithub, IconBrandX, IconWebhook, IconX } from "@tabler/icons-react";
+ 
 export default function Home() {
-  const [value, setValue] = useState("");
-  const [focused, setFocused] = useState(false);
-  const floating = focused || value.length > 0 || undefined;
-  return (
-    <Box mih={"100vh"} miw={"100vw"} className="bg-gray-100 dark:bg-mtn-dark-8">
+  
+   return (
+    <Box mih={"100vh"} miw={"100vw"}>
       <Container size="xs">
         <Stack py={"xl"} justify="space-between">
           <Group justify={"space-between"} align="center">
             <Stack gap="xs">
-              <div className="flex items-center space-x-2">
+              <Group gap='xs'>
                 <svg
-                  className="   w-8 text-blue-500 dark:text-white"
                   fill="none"
                   stroke="currentColor"
                   strokeLinecap="round"
@@ -45,103 +38,95 @@ export default function Home() {
                   <polyline points="16 18 22 12 16 6" />
                   <polyline points="8 6 2 12 8 18" />
                 </svg>
-                <Text className="text-3xl font-bold text-gray-800 dark:text-white">
-                  codellyson
-                </Text>
-              </div>
+                <Text fw='bolder'>codellyson</Text>
+              </Group>
               <Text size={"xs"} variant="text">
                 Frontend Developer
               </Text>
             </Stack>
 
-            <Group gap='xs'>
-            <ActionIcon variant={"transparent"} onClick={()=> window.open('https://github.com/codellyson', '_blank')}><IconBrandGithub   size={18}/></ActionIcon>
-            <ActionIcon variant={"transparent"} onClick={()=> window.open('https://x.com/codellyson', '_blank')}><IconBrandX   size={18}/></ActionIcon>
-            <ColorSchemeToggle />
-
+            <Group gap="xs">
+              <ActionIcon
+                variant={"transparent"}
+                onClick={() =>
+                  window.open("https://github.com/codellyson", "_blank")
+                }
+              >
+                <IconBrandGithub size={18} />
+              </ActionIcon>
+              <ActionIcon
+                variant={"transparent"}
+                onClick={() =>
+                  window.open("https://x.com/codellyson", "_blank")
+                }
+              >
+                <IconBrandX size={18} />
+              </ActionIcon>
+              <ActionIcon
+                variant={"transparent"}
+                onClick={() =>
+                  window.open("https://blog.codellyson.com", "_blank")
+                }
+              >
+                <IconWebhook size={18} />
+              </ActionIcon>
+              <ColorSchemeToggle />
             </Group>
           </Group>
-          <div className="container flex flex-col space-y-2">
-            <article className="pt-6">
-              <div className="space-y-1">
-                <h2 className="font-mono text-lg tracking-tighter">projects</h2>
+          <div>
+            <article>
+              <div>
+                <h2>projects</h2>
               </div>
-              <ul className="space-y-4 py-4">
-                <li>
-                  <Anchor
-                    className="flex flex-col space-y-1.5 !no-underline"
-                    href="https://techchak.com"
-                  >
+              <List>
+                <List.Item>
+                  <Anchor href="https://techchak.com">
                     <div>
-                      <span className="font-medium underline underline-offset-4 ">
-                        techchak
-                      </span>
+                      <Text fw='bold'>Techchak</Text>
                     </div>
-                    <span className="text-muted-foreground text-dark-text">
-                     An all-in-one AI-Powered platform for creators, and knowledge experts to effortlessly create courses, coaching sessions, manage memberships, communities, and earn.
+                    <span>
+                      An all-in-one AI-Powered platform for creators, and
+                      knowledge experts to effortlessly create courses, coaching
+                      sessions, manage memberships, communities, and earn.
                     </span>
                   </Anchor>
-                </li>
-                <li>
-                  <Anchor
-                    className="flex flex-col space-y-1.5 !no-underline"
-                    href="https://druve.com.ng"
-                  >
+                </List.Item>
+                <List.Item>
+                  <Anchor href="https://druve.com.ng">
                     <div>
-                      <span className="font-medium underline underline-offset-4 ">
-                        druve{" "}
-                      </span>
-                       
+                    <Text fw='bold'>Druve </Text>
                     </div>
-                    <span className="text-muted-foreground text-dark-text">
-                    Building the future of Advertising Solutions
+                    <span>Building the future of Advertising Solutions</span>
+                  </Anchor>
+                </List.Item>
+                <List.Item>
+                  <Anchor href="https://ranse.finance">
+                    <div>
+                    <Text fw='bold'>Ranse Finance</Text>
+                    </div>
+                    <span>cross-border payments for Africa</span>
+                  </Anchor>
+                </List.Item>
+                <List.Item>
+                  <Anchor href="https://pilotx.ca">
+                    <div>
+                    <Text fw='bold'>Pilot X </Text>
+                    </div>
+                    <span>
+                      a moving company that provides a wide range of services to
+                      suit your needs.
                     </span>
                   </Anchor>
-                </li>
-                <li>
-                  <Anchor
-                    className="flex flex-col space-y-1.5 !no-underline"
-                    href="https://ranse.finance"
-                  >
-                    <div>
-                      <span className="font-medium underline underline-offset-4 ">
-                        ranse-finance
-                      </span>
-                     
-                    </div>
-                    <span className="text-muted-foreground text-dark-text">
-                     cross-border payments for Africa
-                    </span>
-                  </Anchor>
-                </li>
-                <li>
-                  <Anchor
-                    className="flex flex-col space-y-1.5 !no-underline"
-                    href="https://pilotx.ca"
-                  >
-                    <div>
-                      <span className="font-medium underline underline-offset-4 ">
-                        pilot x delivery
-                      </span>
-                     
-                    </div>
-                    <span className="text-muted-foreground text-dark-text">
-                    a moving company that provides a wide range of services to suit your needs.
-                    </span>
-                  </Anchor>
-                </li>
-             
-              </ul>
+                </List.Item>
+              </List>
             </article>
           </div>
-          <Box className="place-self-end">
-          <Text size={"xs"} variant="text">
-            © {new Date().getFullYear()} codellyson
-          </Text>
-        </Box>
+          <Box>
+            <Text size={"xs"} variant="text">
+              © {new Date().getFullYear()} codellyson
+            </Text>
+          </Box>
         </Stack>
-
-      
       </Container>
     </Box>
   );

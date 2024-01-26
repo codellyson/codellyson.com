@@ -21,7 +21,7 @@ export default function RootLayout({
 			</head>
 			<body>
 				<MantineProvider theme={{
-					primaryColor:'violet',
+					primaryColor:'dark',
 				}}>{children}</MantineProvider>
 				 <Analytics />
 			</body>
