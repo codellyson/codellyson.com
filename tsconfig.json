@@ -21,11 +21,6 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@theme-ui": ["./src/@core/theme-ui/"],
-      "mantine-css": ["./node_modules/@mantine/core/esm/index.css"],
-      "mantine-highlight": [
-        "./node_modules/@mantine/code-highlight/esm/index.css"
-      ]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
