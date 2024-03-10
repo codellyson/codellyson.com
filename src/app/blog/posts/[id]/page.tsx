@@ -1,6 +1,8 @@
 import { Date } from "@/components/date";
 import { getAllPostIds, getPostData } from "@/lib/post";
 
+export const runtime = 'edge';
+
 type PostData = {
   title: string;
   pubDatetime: string;
