@@ -1,5 +1,4 @@
 import "@mantine/core/styles.css";
-
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/header";
@@ -23,7 +22,6 @@ export default function RootLayout({
         <MantineProvider
           theme={{
             primaryColor: "dark",
-          
           }}
         >
           <Container size="xs" py="lg">

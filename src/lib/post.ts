@@ -1,10 +1,7 @@
 import fs from "fs";
 import path from "path";
-
 import matter from "gray-matter";
-
 import { remark } from "remark";
-
 import html from "remark-html";
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -12,7 +9,7 @@ const postsDirectory = path.join(process.cwd(), "posts");
 export function getSortedPostsData() {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames.map((filename) => {
-    const id = filename.replace(/\.md$/, "");
+    const id = filename.replace(/\.mdx$/, "");
     const fullPath = path.join(postsDirectory, filename);
     const fileContent = fs.readFileSync(fullPath, "utf-8");
     const matterResult = matter(fileContent);
@@ -38,14 +35,14 @@ export function getAllPostIds() {
   return fileNames.map((filename) => {
     return {
       params: {
-        id: filename.replace(/\.md$/, ""),
+        id: filename.replace(/\.mdx$/, ""),
       },
     };
   });
 }
 
 export async function getPostData(id: string) {
-  const fullPath = path.join(postsDirectory, `${id}.md`);
+  const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContent = fs.readFileSync(fullPath, "utf-8");
   const matterResult = matter(fileContent);
   const processedContent = await remark()

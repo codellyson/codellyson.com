@@ -1,20 +1,13 @@
-import Link from "next/link";
-import { Date } from "@/components/date";
-import { siteTitle } from "./posts/[id]/layout";
 import utilStyles from "../utils.module.css";
-
 import { getSortedPostsData } from "@/lib/post";
-import { Anchor, List, ListItem, Space, Text, Title } from "@mantine/core";
+import { Space, Title } from "@mantine/core";
+import { Blogs } from "@/components/list";
 
 type AllPostsData = {
   pubDatetime: string;
   title: string;
   id: string;
 }[];
-
-export const metadata = {
-  title: siteTitle,
-};
 
 export default function Home() {
   const allPostsData: AllPostsData = getSortedPostsData();
@@ -26,20 +19,7 @@ export default function Home() {
           Blog Posts
         </Title>
         <Space h={10} />
-        <List className={utilStyles.list}>
-          {allPostsData.map(({ id, pubDatetime, title }) => (
-            <ListItem className={utilStyles.listItem} key={id}>
-              <Anchor component={Link} href={`/blog/posts/${id}`}>
-                {title}
-              </Anchor>
-
-              {/* <br /> */}
-              <Text size="xs">
-                <Date dateString={pubDatetime} />
-              </Text>
-            </ListItem>
-          ))}
-        </List>
+        <Blogs data={allPostsData} />
       </section>
     </>
   );

@@ -11,11 +11,14 @@ tags:
   - tiptap
   - tips-and-tricks
   - fix
+category:
+  - react
+  - tiptap
+  - tips-and-tricks
+  - fix
 description:
    How to fix cursor auto move to the end of the editor in Tiptap react
 ---
-
-## How to fix cursor auto move to the end of the editor in Tiptap react
 
 ### Problem
 
@@ -42,7 +45,7 @@ We can use `isEmpty` to check if the editor is empty or not. If the editor is em
 Thanks to this [issue]('https://github.com/ueberdosis/tiptap/issues/2940#issuecomment-1720058369').
 We can save the cursor position before updating the content and restore it after updating the content.
 
-```tsx  
+```tsx
  useEffect(() => {
     if (content && editor) {
       // Save cursor position

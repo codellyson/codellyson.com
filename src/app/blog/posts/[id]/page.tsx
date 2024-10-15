@@ -1,7 +1,8 @@
 import { Date } from "@/components/date";
-import { getAllPostIds, getPostData } from "@/lib/post";
+import { getPostData } from "@/lib/post";
+import { TypographyStylesProvider } from "@mantine/core";
 
-export const runtime = 'edge';
+// export const runtime = "edge";
 
 type PostData = {
   title: string;
@@ -26,16 +27,15 @@ export default async function Post({ params }: Props) {
 
   return (
     <>
-      <h1 className="font-extrabold text-3xl mb-1">{postData.title}</h1>
-
-      <div className="text-gray-500 font-medium mb-5">
+      <h1 className="font-extrabold text-xl mb-1">{postData.title}</h1>
+      <br />
+      <div className="text-gray-500 font-medium  ">
         <Date dateString={postData.pubDatetime} />
       </div>
 
-      <div
-        className="text-gray-600"
-        dangerouslySetInnerHTML={{ __html: postData.contentHtml }}
-      />
+      <TypographyStylesProvider>
+        <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+      </TypographyStylesProvider>
     </>
   );
 }
