@@ -51,6 +51,15 @@ export const Header = () => {
         </Button>
         <Button
           variant="transparent"
+          onClick={() => router.push("/libraries")}
+          px={0}
+        >
+          <Text span fw="bolder" size="sm">
+            Libraries
+          </Text>
+        </Button>
+        <Button
+          variant="transparent"
           onClick={() => router.push("/blog")}
           px={0}
         >
