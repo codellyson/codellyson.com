@@ -8,7 +8,7 @@ import { Button, rem, Text, Title, TypographyStylesProvider } from "@mantine/cor
 type PostData = {
   title: string;
   pubDatetime: string;
-  contentHtml: string;
+  content: string;
 };
 
 type Props = {
