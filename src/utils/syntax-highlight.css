@@ -1,0 +1,42 @@
+ :root {
+    --rec-code-bg: #000000;
+    --rec-title-bg: #000000;
+    --rec-border-color: #f9d400;
+ }
+ 
+ 
+ .rehype-code-block {
+  position: relative;
+  margin: 1rem 0;
+  background-color: var(--rec-code-bg);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  color: #fff;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.rehype-code-title {
+  padding: 0.5rem 1rem;
+  background-color: var(--rec-title-bg);
+  border-bottom: 1px solid var(--rec-border-color);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+}
+
+.rehype-code-content {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.rehype-code-line-numbers {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  padding: 1rem 0;
+  width: 3rem;
+  text-align: center;
+  background-color: var(--rec-line-number-bg);
+  border-right: 1px solid var(--rec-border-color);
+}

@@ -2,6 +2,18 @@ import "@mantine/core/styles.css";
 import { MantineProvider, ColorSchemeScript, Container } from "@mantine/core";
 import { Analytics } from "@vercel/analytics/react";
 import { Header } from "@/components/header";
+import { shadcnTheme } from "@/utils/theme";
+import { shadcnCssVariableResolver } from "@/utils/cssVariablesResolver";
+import '@/utils/style.css'
+import '@/utils/syntax-highlight.css'
+ import { Poppins } from 'next/font/google'
+ 
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-poppins',
+})
 
 export const metadata = {
   title: "codellyson",
@@ -18,13 +30,12 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body>
+      <body className={poppins.className}>
         <MantineProvider
-          theme={{
-            primaryColor: "dark",
-          }}
+          theme={shadcnTheme}
+          cssVariablesResolver={shadcnCssVariableResolver}
         >
-          <Container size="xs" py="lg">
+          <Container size="lg" py="lg">
             <Header />
             {children}
           </Container>

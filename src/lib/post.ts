@@ -45,13 +45,10 @@ export async function getPostData(id: string) {
   const fullPath = path.join(postsDirectory, `${id}.mdx`);
   const fileContent = fs.readFileSync(fullPath, "utf-8");
   const matterResult = matter(fileContent);
-  const processedContent = await remark()
-    .use(html)
-    .process(matterResult.content);
-  const contentHtml = processedContent.toString();
+  
   return {
     id,
-    contentHtml,
+    content: matterResult.content,
     ...(matterResult.data as {
       pubDatetime: string;
       title: string;

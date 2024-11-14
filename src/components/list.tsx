@@ -18,7 +18,9 @@ export const Blogs = ({ data }: BlogsProps) => {
     <List className={utilStyles.list}>
       {data.map(({ id, pubDatetime, title }) => (
         <ListItem className={utilStyles.listItem} key={id}>
-          <Anchor component={Link} href={`/blog/posts/${id}`} fw="bold">
+          <Anchor component={Link} href={`/blog/posts/${id}`} fw="bold" 
+            
+          >
             {title}
           </Anchor>
 
